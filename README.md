@@ -21,3 +21,14 @@ Challenges ahead
     - Need to determine a tructure in which the createPass function will not only grab elements based off wether or not they were checked, but that also randomizes the order of said elements. 
 
 Also decided to scrap my CSS becuase CSS is garbage and it hates me (may use bootstrap framework instead)
+
+createPass Function Logic Walkthrough
+
+    1. Create a variable and function that create a password as a string (createPass)
+    2. Pass the random functions through the variable 
+    3. Create an array that passes the value of each box checked (use {} as an object literal to return boolean values)
+    4. Used .filter method to loop through the array created. 
+    5. Learned what Object.Value does, but also learned how to use => instead of a function operator (still not exaclty sure what it does but it seems to do alot of the work for you)
+
+As of right now the Generator is complete in function, but still needs some added bonuses. 
+    The first of which adding a working clipboard copy button. 

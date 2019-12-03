@@ -4,27 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css">
     <title>Password Generator</title>
   </head>
   <body>
   </body>
+  
+  <h1>Password Generator</h1>
     <div class="container">
-        <h1>Password Generator</h1>
         <div class="password-container">
             <span id="password"></span>
             <button class="button" id="clipboard">
-                <i class="far fa-clipoard"></i>
             </button>
         <div class="option">
             <label for="length">Password length</label>
             <input type="number" id="length" min= "4" max="20" value="20"/>
         </div>
         <div class="option">
-                <label for="Uppercase">Include Uppercase</label>
+                <label for="Uppercase">Include Lowercase</label>
                 <input type="checkbox" id="Uppercase" />
         </div>
         <div class="option">
-                <label for="Lowercase">Include Lowercase</label>
+                <label for="Lowercase">Include Uppercase</label>
                 <input type="checkbox" id="Lowercase" />
         </div>
         <div class="option">

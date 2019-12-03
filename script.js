@@ -13,6 +13,11 @@ const randomFunc = {
     number: getRandomNumber,
 };
 
+clipboardEl.addEventListener('click',  () => {
+    document.execCommand('copy');
+
+})
+
 function getRandomLowerCase()
 { return String.fromCharCode((Math.floor(Math.random() * 26) + 97))
 }
@@ -30,22 +35,40 @@ function getRandomSpecial()
     return special[Math.floor(Math.random()*special.length)]
 }
 
-function createPass(lower, upper, special, number){
-    
+function createPass(lower, upper, special, number, length){
+    let createPass = "";
 
+    var typesCount = lower + upper + special + number;
+    
+    var typesArr = [{lower}, {upper}, {special}, {number}].filter(
+        item =>Object.values(item)[0]
+    );
+        if (typesCount === 0) {return ''}
+    
+   for (let i=0; i<length; i+=typesCount) {
+       typesArr.forEach(type => {
+        const funcName= Object.keys(type)[0];
+        
+        createPass += randomFunc[funcName]();
+       }
+       ) 
+     
+   }
+   var finalPass = createPass.slice(0, length)
+   return finalPass
 }
 
-
 generateEl.addEventListener('click', function(){
- var length= parseInt(lengthEl.value);
- var wantsUpper= upperEl.checked;
- var wantsLower= lowerEl.checked;
- var wantsSpecial= specialEl.checked;
- var wantsNumber= numberEl.checked;
+    var length= parseInt(lengthEl.value);
+    var wantsUpper= upperEl.checked;
+    var wantsLower= lowerEl.checked;
+    var wantsSpecial= specialEl.checked;
+    var wantsNumber= numberEl.checked;
+   
+   resultEl.innerText = createPass(wantsUpper, wantsLower, wantsSpecial, wantsNumber, length);
+   
+   })
 
-resultEl.innerHTML = createPass(wantsUpper, wantsLower, wantsSpecial, wantsNumber);
-
-})
 
 
 
