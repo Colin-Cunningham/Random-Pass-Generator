@@ -32,3 +32,10 @@ createPass Function Logic Walkthrough
 
 As of right now the Generator is complete in function, but still needs some added bonuses. 
     The first of which adding a working clipboard copy button. 
+
+Semi-Final Commit (summary of project)
+    1. Created the HTML and wrote the bare bones for the JavaScript including the variables and some functions
+    2. Created the functions in which random of each character is taken.
+    3. Used online tutorials especially leaned on "traversy media" to help with the logic of the final function pull, and displaying it on the screen.
+    4. Lastly went in to make my final product look similar to the one posted in the homework folder, using CSS but not modifying my HTML too drastically.
+    5. If anything is too be changed it will most likley be the addition of a "working" copy to clipboard button. 

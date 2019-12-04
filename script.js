@@ -1,40 +1,45 @@
-const resultEl= document.getElementById("clipboard");
-const lengthEl= document.getElementById("length");
-const numberEl= document.getElementById("Numbers");
-const specialEl= document.getElementById("Special");
-const upperEl= document.getElementById("Uppercase");
-const lowerEl= document.getElementById("Lowercase");
-const generateEl= document.getElementById("Generate");
-const clipboardEl= document.getElementById("clipboard");
-const randomFunc = {
+//Created the Variable elements that will store the inputs//
+var resultEl= document.getElementById("password");
+var lengthEl= document.getElementById("length");
+var numberEl= document.getElementById("Numbers");
+var specialEl= document.getElementById("Special");
+var upperEl= document.getElementById("Uppercase");
+var lowerEl= document.getElementById("Lowercase");
+var generateEl= document.getElementById("Generate");
+var clipboardEl= document.getElementById("clipboard");
+var randomFunc = {
     lower: getRandomLowerCase,
     upper: getRandomUpperCase,
     special: getRandomSpecial,
     number: getRandomNumber,
 };
 
-clipboardEl.addEventListener('click',  () => {
-    document.execCommand('copy');
 
-})
+// The random string functions that will run to retrieve info//
 
+//Lowercase Randomizer//
 function getRandomLowerCase()
-{ return String.fromCharCode((Math.floor(Math.random() * 26) + 97))
-}
-
-function getRandomUpperCase()
-{ return String.fromCharCode((Math.floor(Math.random() * 26) + 65))
-}
-
-function getRandomNumber()
-{ return Math.floor(Math.random()*10);
-}
-
-function getRandomSpecial()
-{ const special = '!@#$%^&*(){}[]=/<>,.';
+{ var special = 'abcdefghijklmnopqrstuvwxyz';
     return special[Math.floor(Math.random()*special.length)]
 }
 
+//Upper Case Randomizer//
+function getRandomUpperCase()
+{ var special = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    return special[Math.floor(Math.random()*special.length)]
+}
+
+//Number Randomizer//
+function getRandomNumber()
+{ return Math.floor(Math.random()*10);
+}
+//Special Character//
+function getRandomSpecial()
+{ var special = '!@#$%^&*(){}[]=/<>,.';
+    return special[Math.floor(Math.random()*special.length)]
+}
+
+//Actual create password function//
 function createPass(lower, upper, special, number, length){
     let createPass = "";
 
@@ -54,9 +59,11 @@ function createPass(lower, upper, special, number, length){
        ) 
      
    }
+   // Making the password the desired length//
    var finalPass = createPass.slice(0, length)
    return finalPass
 }
+//Event listener section//
 
 generateEl.addEventListener('click', function(){
     var length= parseInt(lengthEl.value);
@@ -69,7 +76,11 @@ generateEl.addEventListener('click', function(){
    
    })
 
+//Attempted to Create a copy to clipboard button//
+clipboardEl.addEventListener('click',  () => {
+    document.execCommand('copy');
 
+})
 
 
 
