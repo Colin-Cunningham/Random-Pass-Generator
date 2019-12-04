@@ -19,14 +19,14 @@ var randomFunc = {
 
 //Lowercase Randomizer//
 function getRandomLowerCase()
-{ var special = 'abcdefghijklmnopqrstuvwxyz';
-    return special[Math.floor(Math.random()*special.length)]
+{ var lower = 'abcdefghijklmnopqrstuvwxyz';
+    return lower[Math.floor(Math.random()*lower.length)]
 }
 
 //Upper Case Randomizer//
 function getRandomUpperCase()
-{ var special = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    return special[Math.floor(Math.random()*special.length)]
+{ var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    return upper[Math.floor(Math.random()*upper.length)]
 }
 
 //Number Randomizer//
@@ -42,26 +42,27 @@ function getRandomSpecial()
 //Actual create password function//
 function createPass(lower, upper, special, number, length){
     let createPass = "";
-
+//Determines how many types are checked off
     var typesCount = lower + upper + special + number;
-    
+        console.log(typesCount) 
+// Identfies which arrays are checked
     var typesArr = [{lower}, {upper}, {special}, {number}].filter(
         item =>Object.values(item)[0]
-    );
-        if (typesCount === 0) {return ''}
+    ); console.log(typesArr)
+        if (typesCount === 0) {return 'Please select the Paramaters'}
     
-   for (let i=0; i<length; i+=typesCount) {
-       typesArr.forEach(type => {
-        const funcName= Object.keys(type)[0];
+   for (i=0; i<length; i= i + typesCount) {
+        typesArr.forEach(type => {
+        var funcName= Object.keys(type)[0];
         
-        createPass += randomFunc[funcName]();
+        createPass = createPass + randomFunc[funcName]();
        }
        ) 
      
    }
    // Making the password the desired length//
    var finalPass = createPass.slice(0, length)
-   return finalPass
+   return ("Your new password is: " + finalPass)
 }
 //Event listener section//
 
