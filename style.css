@@ -1,25 +1,37 @@
+body{
+    background-image: url("./images/keyboard.jpg");
+    background-size: cover;
+}
+
+
+
 .container-md  {
     position: sticky;
     display: flexbox;
-    width: 960px;
+    width: fit-content;
     padding: 40px;
     margin: 0 auto;
     margin-top: 40px;
     text-align: left;
     font-display: inline;
     border-style: solid;
-    border-color: #dddddd;
-    background-color: #ffffff;
+    border-color: #ddddddc7;
+    background-color: #ffffffe3;
     line-height: 30px;   
 }
 
 
-.password-container{width: fit-content;
+.password-container{
+        width: fit-content;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 700;
+        font-size: larger;
         margin: 0 auto;
         text-align: center;
         }
-div2 { border-style: dashed;}
+
+      
+
 
 
 .option { 
@@ -42,14 +54,14 @@ div2 { border-style: dashed;}
 
 
 
-h1 { text-align: center;
+h1 { 
+    background-color: #dddddd;
+    text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(54, 7, 7);
     width: 50%;
     margin: 0 auto;
-    border-style: dashed;
-    border-color: grey;
-    opacity: 80%;
+    height: 7rem;
+
 }
 
-
-    body {background-color: grey;}

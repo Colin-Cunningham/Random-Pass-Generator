@@ -1,4 +1,19 @@
 # Random-Pass-Generator
+
+***** CODE UPDATE 2/26/2020 (original 12/4/2019) ******
+
+Using array methods, was able to make the whole password truly random, whereas in old versions the type fo characters in were randomized but in order. 
+
+Also added a functioning copy to clipboard button 
+
+Cleaned Code: (Mainly just commenting, did not change variables/function but added more functionality)
+
+Updated the design: Mainly just spruced it up from its extremely boring previous version.
+
+
+***** END UPDATE *****
+
+
 Generate a random secure password.
 
 First Commit = Created the HTML using checkboxes instead of alerts to gather data, as well as organzing in multiple different sub classes.
